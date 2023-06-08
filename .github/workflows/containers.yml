@@ -12,7 +12,7 @@ on:
     branches: [master]
     
 env:
-  DOCKER_REPOSITORY: geopython/pygeoapi
+  DOCKER_REPOSITORY: pfricke/pygeoapi
 #  DOCKER_TEST_IMAGE: geopython/pygeoapi:test
 
 jobs:
@@ -44,7 +44,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.DOCKER_HUB_TOKEN }}
 
 #      - name: Build and export to Docker
 #        uses: docker/build-push-action@v3.1.1
