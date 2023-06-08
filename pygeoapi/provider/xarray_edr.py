@@ -215,10 +215,10 @@ class XarrayEDRProvider(BaseEDRProvider, XarrayProvider):
 
         out_meta = {
             'bbox': [
-                data.coords[self.x_field].values[0],
-                data.coords[self.y_field].values[0],
-                data.coords[self.x_field].values[-1],
-                data.coords[self.y_field].values[-1]
+                np.nanmin(self._data.coords[self.x_field].values),
+                np.nanmin(self._data.coords[self.y_field].values),
+                np.nanmax(self._data.coords[self.x_field].values),
+                np.nanmax(self._data.coords[self.y_field].values),
             ],
             "time": time,
             "driver": "xarray",
